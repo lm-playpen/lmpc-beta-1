@@ -25,7 +25,7 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 ## The "leaderboard"
 
 | Rank | Submission Name | Team Name | clemscore | statscore | Short Description |
-| ---------- | ------- | ------- | ------- | -------|
+| ---------- | ------- | ------- | ------- | -------|------|
 | 0 |  Llama-3.1-8B-Ins (base) | OrgTeam | tba | tba | The unmodified base model |
 
 
