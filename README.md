@@ -22,7 +22,7 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 
 
 
-## The "leaderboard"
+## The leaderboard (dev phase)
 
 | Rank | Submission Name | Team Name | clemscore | statscore | Short Description |
 | ---------- | ------- | ------- | ------- | -------|------|
@@ -31,7 +31,13 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent. (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
 
-This leaderboard stays open until September 15th 2025. At that point, we will ask the 5 highest scoring teams to submit their agent (the agent code and the model weights), as well as a log of their training run. We will then run the evaluation pipeline, but on a set of held-out games (for clemscore), and re-rank based on the outcome of this.
+
+## The leaderboard (test phase)
+
+The dev leaderboard stays open until September 15th 2025. At that point, we will ask the 5 highest scoring teams to submit their agent (the agent code and the model weights), as well as a log of their training run. We will then run the evaluation pipeline, but on a set of held-out games (for clemscore), and re-rank based on the outcome of this.
+
+
+
 
 
 ## Some ideas
@@ -46,13 +52,13 @@ Here are some things you're explicitly allowed and encouraged to do:
 
 ## The fine print
 
-For the actual challenge, we will need a set of rules that are a bit more water tight than the descriptions above. Here's the current draft. Comments very welcome!
+*For this beta round of the challenge, we will use somewhat more relaxed rules that in the real challenge. These rules put fewer constraints on the participants, to allow for wider experimentation on what works and what doesn't. Comments on these rules are very welcome!*
 
 
-This competition aims at fostering research on learning in conversational, task-oriented, multi-turn environments. As a consequence, all submissions must start from the same base LLM and must adhere to the same budgets with respect to training data and evaluation compute resources.
+This competition aims at fostering research on learning in conversational, task-oriented, multi-turn environments. As a consequence, all submissions must start from the same base LLM and must adhere to the same budgets with respect to training data and evaluation compute resources. *[For this beta round, there will be no limit on the training budget; you are just asked to report it as accurately as possible.]*
 Each team will share a report that describes their approach, as well as important findings resulting from the evaluation. The following rules apply:
 
-- Each submitted agent must be the result of a training run that starts with the base LLM distributed with the starter kit. There are no restrictions on the architecture, type of training data, or training algorithm, but a training run may not consume more than 100M tokens. Consuming the same training token $n$ times (e.g. across multiple epochs) counts as $n$ tokens. Participants must submit a Playpen training log along with their agent to enable automatic checking of this rule.
+- Each submitted agent must be the result of a training run that starts with the base LLM distributed with the starter kit. There are no restrictions on the architecture, type of training data, or training algorithm, but a training run may not consume more than 100M tokens. *[For β.1, there is no limit on the size of the training data; it just has to be reported according to these guidelines.]* Consuming the same training token `n` times (e.g. across multiple epochs) counts as `n` tokens. Participants must submit a Playpen training log along with their agent to enable automatic checking of this rule.
 
 - During the evaluation, the submitted agent will be made to play dialogue games that were unseen in training and make predictions on reference-based benchmarks that we will not announce beforehand.
 
@@ -60,9 +66,6 @@ Each team will share a report that describes their approach, as well as importan
 
 - Participants will submit their agents as subclasses of the Playpen `agent` class, through a mechanism TO BE DETERMINED. Agents may not use any LLMs except for one fine-tuned version of the base LLM. They can download this fine-tuned model from the Internet, e.g. through Huggingface, but are not allowed any other form of Internet access.
 
--  During the evaluation, the submitted agents will be run on an Nvidia L40S GPU or similar. There is a time limit of two hours for each evaluation run, after which the agent will be terminated and the evaluation run will be counted as failed.
+-  During the evaluation, the submitted agents will be run on an Nvidia A100 GPU or similar. There is a time limit of two hours for each evaluation run, after which the agent will be terminated and the evaluation run will be counted as failed.
+
 - Agents must not change the parameters of their LLM during evaluation (e.g. through continued reinforcement learning).
-- Participants submit ``draft agents'' for evaluation, with a frequency that we will announce and may modify in response to compute demands.
-    The draft agents will be evaluated on dialogue games that are held-out, but not identical to the actual games used in the final evaluation.
-
-
