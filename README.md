@@ -25,7 +25,7 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 ## The leaderboard (dev phase)
 
 | Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
-| ---------- | ------- | ------- | ------- | -------|------|
+| ---------- | ------- | ------- | ------- | -------|------|-----|
 | 1 | Meta-Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 21.49 | tba | The unmodified base model |
 | 2 |  Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 19.58 | tba | The base model, 4bit quantized |
 | 3 | Llama-3.1-8B-PotsBlitz-1 | 2025-07-03 | Team Potsblitz | 14.39 | tba | tba 
