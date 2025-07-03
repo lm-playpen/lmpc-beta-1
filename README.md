@@ -24,9 +24,11 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 
 ## The leaderboard (dev phase)
 
-| Rank | Submission Name | Team Name | clemscore | statscore | Short Description |
+| Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
 | ---------- | ------- | ------- | ------- | -------|------|
-| 0 |  Llama-3.1-8B-Ins (base) | OrgTeam | tba | tba | The unmodified base model |
+| 0 |  Llama-3.1-8B-Ins (base) | tba | OrgTeam | tba | tba | The unmodified base model |
+| 1 |  Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 19.58 | tba | The base model, 4bit quantized |
+| 2 | PotsBlitz-1 | 2025-07-03 | Team Potsblitz | 14.39 | tba | tba 
 
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent. (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
@@ -52,7 +54,7 @@ Here are some things you're explicitly allowed and encouraged to do:
 
 ## The fine print
 
-*For this beta round of the challenge, we will use somewhat more relaxed rules that in the real challenge. These rules put fewer constraints on the participants, to allow for wider experimentation on what works and what doesn't. Comments on these rules are very welcome!*
+*For this beta round of the challenge, we will use somewhat more relaxed rules than in the real challenge. These rules put fewer constraints on the participants, to allow for wider experimentation on what works and what doesn't. Comments on these rules are very welcome!*
 
 
 This competition aims at fostering research on learning in conversational, task-oriented, multi-turn environments. As a consequence, all submissions must start from the same base LLM and must adhere to the same budgets with respect to training data and evaluation compute resources. *[For this beta round, there will be no limit on the training budget; you are just asked to report it as accurately as possible.]*
