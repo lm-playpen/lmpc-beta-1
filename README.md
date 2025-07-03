@@ -24,10 +24,11 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 
 ## The leaderboard (dev phase)
 
-| Rank | Submission Name | Team Name | clemscore | statscore | Short Description |
-| ---------- | ------- | ------- | ------- | -------|------|
-| 0 |  Llama-3.1-8B-Ins (base) | OrgTeam | tba | tba | The unmodified base model |
+The following table lists the results from the `playpen eval` on the [playpen-data](https://huggingface.co/datasets/colab-potsdam/playpen-data) validation split.
 
+| Rank | Submission Name           | Team Name | clemscore | statscore | Short Description |
+| ---------- |---------------------------| ------- | ------- | -------|------|
+| 0 | Meta-Llama-3.1-8B-Instruct (base) | OrgTeam | 21.49 | tba | The unmodified base model |
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent. (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
 
