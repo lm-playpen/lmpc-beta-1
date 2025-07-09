@@ -25,10 +25,11 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 ## The leaderboard (dev phase)
 
 The following table lists the results from the `playpen eval` on the [playpen-data](https://huggingface.co/datasets/colab-potsdam/playpen-data) validation splits.
+In particular, the clemscore is computed from the model's performance on the sub-selection of instances playing the text-only clemgames (v2), and the statscore is computed from the model's performance on the sub-selection of task for the static benchmarks (v1) (CLadder, EQBench, IFEval, MMLUPro).
 
 | Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
 | ---------- | ------- | ------- | ------- | -------|-----------|-----|
-| 1 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 24.60      | 13.48     | The unmodified base model |
+| 1 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 24.60      | 55.45     | The unmodified base model |
 | 2 |  Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 19.58 | tba       | The base model, 4bit quantized |
 | 3 | Llama-3.1-8B-PotsBlitz-1 | 2025-07-03 | Team Potsblitz | 14.39 | tba       | tba |
 
