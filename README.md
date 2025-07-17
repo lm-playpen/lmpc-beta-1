@@ -29,10 +29,13 @@ In particular, the clemscore is computed from the model's performance on the sub
 
 | Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
 | ---------- | ------- | ------- | ------- | -------|-----------|-----|
-| 1 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
-| 2 |  Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 19.58 | tba       | The base model, 4bit quantized |
-| 3 | Llama-3.1-8B-PotsBlitz-1 | 2025-07-03 | Team Potsblitz | 14.39 | tba       | tba |
-| 4    | Llama-3.1-8B-PotsBlitz-2      | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
+| 1 | Llama-3.1-8b-sft-combined | 2025-07-17 | Team Potsblitz | 42.68      | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data |
+| 2    | Llama-3.1-8B-PotsBlitz-2      | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
+| 3 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
+| 4 |  Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 19.58 | tba       | The base model, 4bit quantized |
+| 5 |  Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
+| 6 | Llama-3.1-8B-PotsBlitz-1 | 2025-07-03 | Team Potsblitz | 14.39 | tba       | tba |
+
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), <strike>but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent.</strike> (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
 
