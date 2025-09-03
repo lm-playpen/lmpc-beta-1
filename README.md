@@ -36,7 +36,7 @@ In particular, the clemscore is computed from the model's performance on the sub
 | 5 | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
 | 6 | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
 | 7 | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Team Potsblitz | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*)
-
+| 8 | R1-distill-Llama-8b | 2025-09-03 | Team Potsblitz | 6.77 | 46.37 | R1-distill-llama-8b 
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), <strike>but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent.</strike> (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
 
