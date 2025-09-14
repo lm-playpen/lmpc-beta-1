@@ -35,9 +35,11 @@ In particular, the clemscore is computed from the model's performance on the sub
 | 4 | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | TeamPotzblitz | 27.66 | 50.47 | 4bit quantized model DPO-tuned on 2800 game-specific instructions |
 | 5 | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
 | 6 | Llama-3.1-8b-curriculum-2 | 2025-09-14 | Team Potsblitz | 26.84 | 38.53 | Trained on game instances ordered by (model-defined) difficulty |
-| 7 | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
-| 8 | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Team Potsblitz | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*) |
-| 9 | R1-distill-Llama-8b | 2025-09-03 | Team Potsblitz | 6.77 | 46.37 | R1-distill-llama-8b |
+| 7 | Llama-3.1-8b-failure-learning | 2025-09-14 | Team Potsblitz | 21.10 | 57.95 | Model finetuned on a subset of clemgames consisting only of tasks the base model failed |
+| 8 | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
+| 9 | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Team Potsblitz | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*) |
+| 10 | R1-distill-Llama-8b | 2025-09-03 | Team Potsblitz | 6.77 | 46.37 | R1-distill-llama-8b |
+
 
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), <strike>but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent.</strike> (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
