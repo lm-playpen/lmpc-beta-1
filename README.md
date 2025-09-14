@@ -30,7 +30,7 @@ In particular, the clemscore is computed from the model's performance on the sub
 | Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
 | ---------- | ------- | ------- | ------- | -------|-----------|-----|
 | 1 | Llama-3.1-8b-sft-combined | 2025-07-17 | Team Potsblitz | 42.68      | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data |
-| 2 | Llama-3.1-8B-PotsBlitz-2      | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
+| 2 | [Llama-3.1-8B-curriculum](https://huggingface.co/alextsiak/llama8b-instruct-hardcoded-curriculum-final) | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
 | 3 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
 | 4 | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | TeamPotzblitz | 27.66 | 50.47 | 4bit quantized model DPO-tuned on 2800 game-specific instructions |
 | 5 | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
