@@ -27,16 +27,18 @@ For this beta-testing round, we can't offer any cash prizes, or much of anything
 The following table lists the results from the `playpen eval` on the [playpen-data](https://huggingface.co/datasets/colab-potsdam/playpen-data) validation splits.
 In particular, the clemscore is computed from the model's performance on the sub-selection of instances playing the text-only clemgames (v2), and the statscore is computed from the model's performance on the sub-selection of task for the static benchmarks (v1) (CLadder, EQBench, IFEval, MMLUPro).
 
-| Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
-| ---------- | ------- | ------- | ------- | -------|-----------|-----|
-| 1 | Llama-3.1-8b-sft-combined | 2025-07-17 | Team Potsblitz | 42.68      | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data |
-| 2 | Llama-3.1-8B-PotsBlitz-2      | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
-| 3 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
-| 4 | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | TeamPotzblitz | 27.66 | 50.47 | 4bit quantized model DPO-tuned on 2800 game-specific instructions 
-| 5 | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
-| 6 | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
-| 7 | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Team Potsblitz | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*)
-| 8 | R1-distill-Llama-8b | 2025-09-03 | Team Potsblitz | 6.77 | 46.37 | R1-distill-llama-8b
+| Rank | Submission Name                                 | Date       | Team Name      | clemscore | statscore | Short Description                                                                                                                    |
+| ---- | ----------------------------------------------- | ---------- | -------------- | --------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 1    | Llama-3.1-8b-sft-combined                       | 2025-07-17 | Team Potsblitz | 42.68     | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data                                                                  |
+| 2    | Llama-3.1-8B-PotsBlitz-2                        | 2025-07-15 | Team Potsblitz | 34.21     | 32.70     | 4bit quantized, trained on game instances ordered by (human-defined) difficulty                                                      |
+| 3    | Llama-3.1-8b-grpo                               | 2025-09-14 | Team Potsblitz | 32.82     | 57.86     | Base model trained on DPO data from clemgames, using custom scoring functions for verifiable reward computation                      |
+| 4    | Llama-3.1-8B-Instruct (base)                    | 2025-07-03 | OrgTeam        | 29.05     | 55.45     | The unmodified base model (_updated 2025-07-16, fixed eval pipeline_)                                                                |
+| 5    | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | TeamPotzblitz  | 27.66     | 50.47     | 4bit quantized model DPO-tuned on 2800 game-specific instructions                                                                    |
+| 6    | Llama-3.1-8B-It-4bit (base)                     | 2025-07-03 | Team Potzblitz | 27.35     | 49.16     | The base model, 4bit quantized (_updated 2025-08-22, added statscore_)                                                               |
+| 7    | Llama-3.1-8b-sft-grpo                           | 2025-09-14 | Team Potzblitz | 26.68     | 57.86     | Llama-3.1-8b-sft-combined trained on DPO data from clemgames, using custom scoring functions for verifiable reward computation       |
+| 8    | Llama-3.1-8b-dpo-turn-filtered                  | 2025-07-17 | Team Potzblitz | 19.26     | 56.40     | Model trained on combined filtered DPO Turn dataset and Tülu DPO data                                                                |
+| 9    | Llama-3.1-8B-It-4bit-dpo-if                     | 2025-07-03 | Team Potsblitz | 12.63     | 47.92     | 4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (_updated 2025-08-22, added statscore_) |
+| 10   | R1-distill-Llama-8b                             | 2025-09-03 | Team Potsblitz | 6.77      | 46.37     | R1-distill-llama-8b                                                                                                                  |
 
 Here's how the sorting works (will eventually work): Entries will be sorted by clemscore (higher is better), <strike>but only those entries will enter the sorting that have a statscore that is not lower than that of the baseline agent.</strike> (This is to ensure that your agent does not regress on other desirable properties measured by the static benchmarking pipeline. (And no, obviously you may not add any of that test data to your training data.))
 
