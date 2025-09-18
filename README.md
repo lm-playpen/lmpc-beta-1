@@ -28,17 +28,19 @@ The following table lists the results from the `playpen eval` on the [playpen-da
 In particular, the clemscore is computed from the model's performance on the sub-selection of instances playing the text-only clemgames (v2), and the statscore is computed from the model's performance on the sub-selection of task for the static benchmarks (v1) (CLadder, EQBench, IFEval, MMLUPro).
 
 | Rank | Submission Name | Date | Team Name | clemscore | statscore | Short Description |
-| ---------- | ------- | ------- | ------- | -------|-----------|-----|
-| 1 | Llama-3.1-8b-sft-combined | 2025-07-17 | Team Potsblitz | 42.68      | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data |
-| 2 | [Llama-3.1-8B-curriculum](https://huggingface.co/alextsiak/llama8b-instruct-hardcoded-curriculum-final) | 2025-07-15 | Team Potsblitz | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
-| 3 | Llama-3.1-8B-Instruct (base) | 2025-07-03 | OrgTeam | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
-| 4 | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | TeamPotzblitz | 27.66 | 50.47 | 4bit quantized model DPO-tuned on 2800 game-specific instructions |
-| 5 | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Team Potzblitz | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
-| 6 | Llama-3.1-8b-curriculum-2 | 2025-09-14 | Team Potsblitz | 26.84 | 38.53 | Trained on game instances ordered by (model-defined) difficulty |
-| 7 | Llama-3.1-8b-failure-learning | 2025-09-14 | Team Potsblitz | 21.10 | 57.95 | Model finetuned on a subset of clemgames consisting only of tasks the base model failed |
-| 8 | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Team Potzblitz | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
-| 9 | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Team Potsblitz | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*) |
-| 10 | R1-distill-Llama-8b | 2025-09-03 | Team Potsblitz | 6.77 | 46.37 | R1-distill-llama-8b |
+|------| ------- | ------- |-----------| -------|-----------|-----|
+| 1    | Llama-3.1-8b-sft-combined | 2025-07-17 | Utsch     | 42.68      | 53.25     | Model trained on combined SFT data from clemgames and Tülu SFT data |
+| 2    | [Llama-3.1-8B-curriculum](https://huggingface.co/alextsiak/llama8b-instruct-hardcoded-curriculum-final) | 2025-07-15 | Alex      | 34.21     | 32.70      | 4bit quantized, trained on game instances ordered by (human-defined) difficulty |
+| 3    | [Llama-3.1-8b-grpo](https://huggingface.co/pm-25/llama3-8b-grpo) | 2025-09-14 | Utsch     | 32.82 | 57.86 | Base model trained on DPO data from clemgames, using custom scoring functions for verifiable reward computation |
+| 4    | Llama-3.1-8B-Instruct (base) | 2025-07-03 | CLP       | 29.05      | 55.45     | The unmodified base model (*updated 2025-07-16, fixed eval pipeline*) |
+| 5    | Llama-3.1-8B-It-4bit-game-specific-instructions | 2025-08-24 | Zorin     | 27.66 | 50.47 | 4bit quantized model DPO-tuned on 2800 game-specific instructions |
+| 6    | Llama-3.1-8B-It-4bit (base) | 2025-07-03 | Zorin     | 27.35 | 49.16       | The base model, 4bit quantized (*updated 2025-08-22, added statscore*) |
+| 7    | Llama-3.1-8b-curriculum-2 | 2025-09-14 | Alex      | 26.84 | 38.53 | Trained on game instances ordered by (model-defined) difficulty |
+| 8    | [Llama-3.1-8b-sft-grpo](https://huggingface.co/pm-25/llama3-8b-sft-grpo) | 2025-09-14 | Utsch     | 26.68 | 57.86 | Llama-3.1-8b-sft-combined trained on DPO data from clemgames, using custom scoring functions for verifiable reward computation |
+| 9    | Llama-3.1-8b-failure-learning | 2025-09-14 | Alex      | 21.10 | 57.95 | Model finetuned on a subset of clemgames consisting only of tasks the base model failed |
+| 10   | Llama-3.1-8b-dpo-turn-filtered | 2025-07-17 | Utsch     | 19.26 | 56.40       | Model trained on combined filtered DPO Turn dataset and Tülu DPO data |
+| 11   | Llama-3.1-8B-It-4bit-dpo-if | 2025-07-03 | Zorin     | 12.63 | 47.92       |  4bit quantized model DPO-tuned on allenai/tulu-3-pref-personas-instruction-following dataset (*updated 2025-08-22, added statscore*) |
+| 12   | R1-distill-Llama-8b | 2025-09-03 | Zorin     | 6.77 | 46.37 | R1-distill-llama-8b |
 
 
 
