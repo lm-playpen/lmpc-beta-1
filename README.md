@@ -53,8 +53,13 @@ Here's how the sorting works (will eventually work): Entries will be sorted by c
 
 The dev leaderboard stays open until September 15th 2025. At that point, we will ask the 5 highest scoring teams to submit their agent (the agent code and the model weights), as well as a log of their training run. We will then run the evaluation pipeline, but on a set of held-out games (for clemscore), and re-rank based on the outcome of this.
 
-
-
+| Rank | Model                                              | Team | clemscore (ood) |
+|------|----------------------------------------------------|------|-----------------|
+| 1    | Meta-Llama-3.1-8B-Instruct-t0.0                    | CLP  | 11.23           |
+| 2    | llama3-8b-it-4bit-game-specific-instructions-t0.0  | ZATZ | 9.86            |
+| 3    | llama3-8b-sft-curriculum-t0.0                      | ZATZ | 0.56            |
+| 4    | llama3-8b-grpo-t0.0                                | ULN  | 0.0             |
+| 5    | llama3-8b-sft-combined-t0.0                        | ULN  | 0.0             |
 
 
 ## Some ideas
