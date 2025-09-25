@@ -53,13 +53,15 @@ Here's how the sorting works (will eventually work): Entries will be sorted by c
 
 The dev leaderboard stays open until September 15th 2025. At that point, we will ask the 5 highest scoring teams to submit their agent (the agent code and the model weights), as well as a log of their training run. We will then run the evaluation pipeline, but on a set of held-out games (for clemscore), and re-rank based on the outcome of this.
 
-| Rank | Model                                              | Team | clemscore (ood) | clemscore (test) |
-|------|----------------------------------------------------|------|-----------------|------------------|
-| 1    | Meta-Llama-3.1-8B-Instruct-t0.0                    | CLP  | 11.23           | 26.86 |
-| 2    | llama3-8b-it-4bit-game-specific-instructions-t0.0  | ZATZ | 9.86            | 26.67 |
-| 3    | llama3-8b-sft-curriculum-t0.0                      | ZATZ | 0.56            | 17.56 |
-| 4    | llama3-8b-sft-combined-t0.0                        | ULN  | 0.0             | 20.45 |
-| 5    | llama3-8b-grpo-t0.0                                | ULN  | 0.0             | 16.02 |
+| Rank | Model                                              | Team | clemscore (holdout) (P/Q) | clemscore (test) |
+|------|----------------------------------------------------|------|--------------------------|------------------|
+| 1    | Meta-Llama-3.1-8B-Instruct-t0.0                    | CLP  | 11.23 (79.35/14.15)      | 26.86 |
+| 2    | llama3-8b-it-4bit-game-specific-instructions-t0.0  | ZATZ | 9.86 (76.28/12.92)       | 26.67 |
+| 3    | llama3-8b-grpo-t0.0                                | ULN  | 9.30 (76.08/12.23)       | 16.02 |
+| 4    | llama3-8b-sft-combined-t0.0                        | ULN  | 3.13 (85.99/3.64)        | 20.45 |
+| 5    | llama3-8b-sft-curriculum-t0.0                      | ZATZ | 0.56 (37.04/1.50)        | 17.56 |
+
+
 
 Detailed in-domain results:
 
