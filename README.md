@@ -53,13 +53,13 @@ Here's how the sorting works (will eventually work): Entries will be sorted by c
 
 The dev leaderboard stays open until September 15th 2025. At that point, we will ask the 5 highest scoring teams to submit their agent (the agent code and the model weights), as well as a log of their training run. We will then run the evaluation pipeline, but on a set of held-out games (for clemscore), and re-rank based on the outcome of this.
 
-| Rank | Model                                              | Team | clemscore (holdout) (P/Q) | clemscore (test) |
-|------|----------------------------------------------------|------|--------------------------|------------------|
-| 1    | Meta-Llama-3.1-8B-Instruct-t0.0                    | CLP  | 11.23 (79.35/14.15)      | 26.86 |
-| 2    | llama3-8b-it-4bit-game-specific-instructions-t0.0  | ZATZ | 9.86 (76.28/12.92)       | 26.67 |
-| 3    | llama3-8b-grpo-t0.0                                | ULN  | 9.30 (76.08/12.23)       | 16.02 |
-| 4    | llama3-8b-sft-combined-t0.0                        | ULN  | 3.13 (85.99/3.64)        | 20.45 |
-| 5    | llama3-8b-sft-curriculum-t0.0                      | ZATZ | 0.56 (37.04/1.50)        | 17.56 |
+| Rank | Model                                              | Team | clemscore (holdout) (P/Q) | clemscore (test) (P/Q) | clemscore (val) |
+|------|----------------------------------------------------|------|--------------------------|------------------------|---------------|
+| 1    | Meta-Llama-3.1-8B-Instruct-t0.0                    | CLP  | 11.23 (79.35/14.15)      | 26.86 (57.33/46.86)    | 29.05 |
+| 2    | llama3-8b-it-4bit-game-specific-instructions-t0.0  | ZATZ | 9.86 (76.28/12.92)       | 26.67 (60.12/44.36)    | 27.66 |
+| 3    | llama3-8b-grpo-t0.0                                | ULN  | 9.30 (76.08/12.23)       | 28.93 (39.96/57.07)    | 32.82 |
+| 4    | llama3-8b-sft-combined-t0.0                        | ULN  | 3.13 (85.99/3.64)        | 45.39 (35.91/76.67)    | 42.68 |
+| 5    | llama3-8b-sft-curriculum-t0.0                      | ZATZ | 0.56 (37.04/1.50)        | 17.56 (43.82/40.07)    | 34.21 |
 
 
 
@@ -67,12 +67,11 @@ Detailed in-domain results:
 
 | Rank | Model | - clemscore | all, Average % Played | all, Average Quality Score | adventuregame, % Played | adventuregame, Quality Score | codenames, % Played | codenames, Quality Score | guesswhat, % Played | guesswhat, Quality Score | imagegame, % Played | imagegame, Quality Score | matchit_ascii, % Played | matchit_ascii, Quality Score | privateshared, % Played | privateshared, Quality Score | referencegame, % Played | referencegame, Quality Score | taboo, % Played | taboo, Quality Score | textmapworld, % Played | textmapworld, Quality Score | textmapworld_graphreasoning, % Played | textmapworld_graphreasoning, Quality Score | textmapworld_specificroom, % Played | textmapworld_specificroom, Quality Score | wordle, % Played | wordle, Quality Score | wordle_withclue, % Played | wordle_withclue, Quality Score | wordle_withcritic, % Played | wordle_withcritic, Quality Score |
 |------|-------|-------------|-----------------------|----------------------------|--------------------------|------------------------------|--------------------|---------------------------|---------------------|--------------------------|---------------------|---------------------------|--------------------------|-----------------------------|--------------------------|-------------------------------|--------------------------|--------------------------------|-----------------|---------------------|------------------------|-----------------------------|------------------------------------|---------------------------------------|-----------------------------------|--------------------------------------|------------------|-------------------|----------------------------|--------------------------------|-----------------------------|--------------------------------|
-| 1 | Meta-Llama-3.1-8B-Instruct-t0.0 | 26.86 | 57.33 | 46.86 | 45.31 | 63.79 | 54.44 | 20.41 | 88.33 | 16.35 | 58.33 | 47.86 | 72.5 | 75.86 | 74.0 | 52.29 | 100.0 | 35.56 | 95.0 | 39.47 | 28.0 | 51.53 | 33.33 | 34.19 | 76.67 | 100.0 | 50.0 | 0.0 | 13.33 | 56.25 | 13.33 | 62.5 |
-| 2 | llama3-8b-it-4bit-game-specific-instructions-t0.0 | 26.67 | 60.12 | 44.36 | 34.38 | 66.67 | 46.67 | 19.05 | 90.0 | 12.35 | 68.33 | 56.71 | 100.0 | 65.0 | 100.0 | 24.21 | 100.0 | 38.89 | 100.0 | 34.17 | 38.0 | 53.7 | 47.62 | 58.79 | 80.0 | 100.0 | 36.67 | 2.73 | 0.0 | 0 | 0.0 | 0 |
-| 3 | llama3-8b-sft-combined-t0.0 | 20.45 | 45.97 | 44.49 | 4.69 | 44.44 | 34.44 | 12.9 | 23.33 | 76.19 | 21.67 | 9.0 | 42.5 | 35.29 | 76.0 | 60.58 | 98.89 | 37.08 | 100.0 | 34.72 | 62.0 | 69.65 | 100.0 | 49.8 | 63.33 | 84.21 | 16.67 | 20.0 | 0.0 | 0 | 0.0 | 0 |
-| 4 | llama3-8b-sft-curriculum-t0.0 | 17.56 | 43.82 | 40.07 | 16.41 | 60.32 | 5.56 | 0.0 | 96.67 | 31.61 | 0.0 | 0 | 100.0 | 45.0 | 52.0 | 32.74 | 85.56 | 42.86 | 100.0 | 33.89 | 24.0 | 62.18 | 0.0 | 0 | 66.67 | 100.0 | 30.0 | 11.11 | 6.67 | 50.0 | 30.0 | 11.11 |
-| 5 | llama3-8b-grpo-t0.0 | 16.02 | 37.98 | 42.18 | 12.5 | 20.83 | 1.11 | 100.0 | 35.0 | 14.29 | 6.67 | 0.0 | 30.0 | 33.33 | 74.0 | 59.35 | 100.0 | 37.78 | 100.0 | 38.61 | 20.0 | 53.76 | 52.38 | 48.18 | 50.0 | 93.33 | 50.0 | 25.82 | 0.0 | 0 | 0.0 | 0 |
-
+| 1    | llama3-8b-sft-combined-t0.0    | 45.39     | 35.91             | 76.67            | 63.28          | 59.2                  | 64.44       | 46.67             | 98.33       | 48.59             | 100.0       | 75.05             | 100.0           | 75.0                  | 100.0           | 93.15                 | 100.0           | 38.89                 | 100.0   | 43.06         | 94.0           | 69.96                 | 33.33                          | 62.07                             | 100.0                       | 100.0                           | 46.67    | 26.73          | 33.33             | 61.67                   | 40.0                | 50.0                       | 52.22 |
+| 2    | llama3-8b-grpo-t0.0            | 28.93     | 39.96             | 57.07            | 38.28          | 50.7                  | 54.44       | 40.72             | 88.33       | 15.09             | 55.0        | 51.27             | 77.5            | 74.19                 | 78.0            | 50.46                 | 100.0           | 34.44                 | 95.0    | 44.44         | 32.0           | 54.0                  | 23.81                          | 37.9                              | 76.67                       | 100.0                           | 53.33    | 7.5            | 13.33             | 100.0                   | 13.33               | 58.33                      |
+| 3    | Meta-Llama-3.1-8B-Instruct-t0.0 | 26.86 | 57.33 | 46.86 | 45.31 | 63.79 | 54.44 | 20.41 | 88.33 | 16.35 | 58.33 | 47.86 | 72.5 | 75.86 | 74.0 | 52.29 | 100.0 | 35.56 | 95.0 | 39.47 | 28.0 | 51.53 | 33.33 | 34.19 | 76.67 | 100.0 | 50.0 | 0.0 | 13.33 | 56.25 | 13.33 | 62.5 |
+| 4    | llama3-8b-it-4bit-game-specific-instructions-t0.0 | 26.67 | 60.12 | 44.36 | 34.38 | 66.67 | 46.67 | 19.05 | 90.0 | 12.35 | 68.33 | 56.71 | 100.0 | 65.0 | 100.0 | 24.21 | 100.0 | 38.89 | 100.0 | 34.17 | 38.0 | 53.7 | 47.62 | 58.79 | 80.0 | 100.0 | 36.67 | 2.73 | 0.0 | 0 | 0.0 | 0 |
+| 5    | llama3-8b-sft-curriculum-t0.0 | 17.56 | 43.82 | 40.07 | 16.41 | 60.32 | 5.56 | 0.0 | 96.67 | 31.61 | 0.0 | 0 | 100.0 | 45.0 | 52.0 | 32.74 | 85.56 | 42.86 | 100.0 | 33.89 | 24.0 | 62.18 | 0.0 | 0 | 66.67 | 100.0 | 30.0 | 11.11 | 6.67 | 50.0 | 30.0 | 11.11 |
 
 
 ## Some ideas
